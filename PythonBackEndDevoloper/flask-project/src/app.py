@@ -8,8 +8,11 @@ nome = "Lucas de Souza Santos"
 
 @app.route("/olamundo/<usuario>/<int:idade>/<float:altura>")
 def hello_world(usuario, idade, altura):
-    return f"""<p>Tipo das variávies usuario, idade e altura: {type(usuario)}
-          , {type(idade)}, {type(altura)}.</p>"""
+    return {
+        "Nome": usuario,
+        "Idade": idade,
+        "Altura": altura
+    }
 
 
 @app.route("/sejabemvindo")
