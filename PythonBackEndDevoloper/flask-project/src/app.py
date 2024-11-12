@@ -66,8 +66,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-   
+
     app.cli.add_command(init_db_command)
     db.init_app(app)
+
+    # register blueprint
+    from src.controllers import user
+
+    app.register_blueprint(user.app)
 
     return app
