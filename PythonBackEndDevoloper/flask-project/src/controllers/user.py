@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from src.app import User, db
 from http import HTTPStatus
 from sqlalchemy import inspect
+from flask_jwt_extended import jwt_required
 
 app = Blueprint("user", __name__, url_prefix="/users")
 
@@ -14,6 +15,7 @@ def _create_user():
     db.session.commit()
 
 
+@jwt_required()
 def _list_users():
     query = db.select(User)
     users = db.session.execute(query).scalars()
