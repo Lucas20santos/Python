@@ -16,8 +16,10 @@ Após a autenticação, a autorização determina quais recursos um usuaŕio aut
 
 JSON Web Tokens (JWT) é um padrão aberto (RFC 7519) que define uma maneira compacta e independente de transmitir informações de forma segura entre as partes como um objeto JSON.
 
-#### cARACTERÍSTICAS DO JWT
+#### Característica do JWT
 
 - **Compacto**: Pode ser enviado através de uma URL, parâmetro POST ou no cabeçalho HTTP.
 
 - **Autocontido:** A carga útil contém todas as informações necessáris sobre o usuário, evitando a necessidade de soncultar o banco de dados mais de uma vez.
+
+

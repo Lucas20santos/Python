@@ -26,20 +26,18 @@ class Role(db.Model):
     user: Mapped[list["User"]] = relationship(back_populates='role')
 
     def __repr__(self) -> str:
-        return f"Role(id={self.id!r}, username={self.name!r}"
+        return f"Role(id={self.id!r}, username={self.name!r}, user={self.user}"
 
 
 class User(db.Model):
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
-    username: Mapped[str] = mapped_column(sa.String, unique=True,
-                                          nullable=False)
-    password: Mapped[str] = mapped_column(sa.String,
-                                          nullable=False)
+    username: Mapped[str] = mapped_column(sa.String, unique=True, nullable=False)
+    password: Mapped[str] = mapped_column(sa.String, nullable=False)
     role_id: Mapped[int] = mapped_column(sa.ForeignKey("role.id"))
     role: Mapped['Role'] = relationship(back_populates='user')
 
     def __repr__(self) -> str:
-        return f"User(id={self.id!r}, username={self.username!r}"
+        return f"User(id={self.id!r}, username={self.username!r}, password={self.password!r}"
 
 
 class Post(db.Model):
@@ -51,8 +49,7 @@ class Post(db.Model):
     author_id: Mapped[int] = mapped_column(sa.ForeignKey("user.id"))
 
     def __repr__(self) -> str:
-        return f"Post(id={self.id!r}, title={self.title!r},\
-                autho_id={self.author_id}"
+        return f"Post(id={self.id!r}, title={self.title!r}, autho_id={self.author_id!r}"
 
 
 @click.command('init-db')
