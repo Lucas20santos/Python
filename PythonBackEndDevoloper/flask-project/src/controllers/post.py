@@ -3,10 +3,10 @@ from src.app import Post, db
 from http import HTTPStatus
 from sqlalchemy import inspect
 
-app_post = Blueprint("post", __name__, url_prefix="/post")
+app = Blueprint("post", __name__, url_prefix="/post")
 
 
-@app_post.route("/", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 def handle_post():
     print(request.method)
     if request.method == "POST":
@@ -38,7 +38,7 @@ def _list_posts():
     ]
 
 
-@app_post.route("/<int:post_id>")
+@app.route("/<int:post_id>")
 def get_user(post_id):
     post = db.get_or_404(Post, post_id)
     return {
@@ -50,7 +50,7 @@ def get_user(post_id):
     }
 
 
-@app_post.route("/<int:post_id>", methods=["PATCH"])
+@app.route("/<int:post_id>", methods=["PATCH"])
 def update_user(post_id):
     post = db.get_or_404(Post, post_id)
     data = request.json
@@ -70,7 +70,7 @@ def update_user(post_id):
     }
 
 
-@app_post.route("/<int:post_id>", methods=["DELETE"])
+@app.route("/<int:post_id>", methods=["DELETE"])
 def remove_user(post_id):
     post = db.get_or_404(Post, post_id)
     db.session.delete(post)
