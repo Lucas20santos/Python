@@ -67,5 +67,31 @@ The end-to-end copilot conversation
 - AI Builder
 - Microsoft Dataverse
 - Power Fx
-- Four4
-    - Conectores
+- 
+
+## Conectores
+
+Conecte em mais de + 1400 serviços com conectores pré-contruidos de diversas ferramentas, desde Adobe até Zendesk, e serviços on-premises.
+
+Estenda seu copilot e construa o seu próprio conector.
+
+## A importância da IA
+
+Qual a importância do Copilot Studio no cenário da Inteligência Artificial ?
+
+- **Eficiência**: Fazer tarefas repetitivas
+- **Gestão da Informação**: Organizar e buscar informações rapidamente
+- **Serviço ao Cliente**: Permitir um suporte 24/7
+- **Análise de dados**: Analisar grande quantidade de dados para providenciar insights
+- **Assistente pessoal**: Gerencias vários aspectos da sua vida pessoal.
+
+## Licenciamento
+
+- Copilot Studio for Tearms
+- Copilot Studio premium
+- Copilot Studio in Copilot for M365
+- Pay-as-you-go
+
+## Tipos de Copilot
+
+-
